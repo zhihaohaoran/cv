@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zhihao Guo | PhD Researcher</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #1a237e; /* Dark Blue */
+            --secondary-color: #3949ab;
+            --text-main: #333333;
+            --text-muted: #666666;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+            --border-color: #e0e0e0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            line-height: 1.6;
+            background-color: var(--bg-light);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Merriweather', serif;
+            color: var(--primary-color);
+        }
+
+        a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Section */
+        header {
+            background-color: var(--white);
+            padding: 60px 0 40px;
+            border-bottom: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 0.95rem;
+        }
+
+        .contact-info a {
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .contact-info a:hover {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        /* Main Content Sections */
+        section {
+            background-color: var(--white);
+            padding: 40px;
+            margin: 30px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+
+        section h2 {
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+        }
+
+        /* Item Layouts (Education & Experience) */
+        .item {
+            margin-bottom: 25px;
+        }
+
+        .item:last-child {
+            margin-bottom: 0;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+
+        .item-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .item-date {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .item-subtitle {
+            font-style: italic;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* Publications */
+        .publication {
+            margin-bottom: 20px;
+            padding-left: 15px;
+            border-left: 3px solid var(--border-color);
+        }
+        
+        .publication strong {
+            color: var(--primary-color);
+        }
+
+        /* Profile Section */
+        .profile-section {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 20px;
+        }
+
+        .profile-photo {
+            flex-shrink: 0;
+        }
+
+        .profile-photo img {
+            width: 180px;
+            height: 180px;
+            border-radius: 12px;
+            object-fit: cover;
+            box-shadow: 0 8px 16px rgba(26, 35, 126, 0.15);
+            border: 3px solid var(--primary-color);
+        }
+
+        .profile-info {
+            flex: 1;
+        }
+
+        /* Favorite Poem */
+        .favorite-poem {
+            margin-top: 20px;
+            padding: 15px 20px;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            border-left: 4px solid #667eea;
+            border-radius: 8px;
+            font-style: italic;
+            color: #764ba2;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            font-weight: 500;
+        }
+
+        /* Favorite Singer Box */
+        .favorite-singer-box {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 12px;
+            margin: 30px 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(245, 87, 108, 0.3);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .favorite-singer-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+            z-index: 1;
+        }
+
+        .favorite-singer-box:hover::before {
+            left: 100%;
+        }
+
+        .singer-photo {
+            flex-shrink: 0;
+            z-index: 2;
+        }
+
+        .singer-photo img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .singer-content {
+            flex: 1;
+            z-index: 2;
+            text-align: left;
+        }
+
+        .favorite-singer-box h3 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+            color: white;
+            font-weight: 600;
+            opacity: 0.95;
+        }
+
+        .favorite-singer-box .singer-name {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin: 10px 0;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .favorite-singer-box .singer-info {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            opacity: 0.95;
+        }
+
+        @media (max-width: 600px) {
+            .favorite-singer-box {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+                padding: 30px 20px;
+            }
+
+            .singer-content {
+                text-align: center;
+            }
+
+            .singer-photo img {
+                width: 150px;
+                height: 150px;
+            }
+        }
+
+        /* Highlight Boxes */
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 6px 12px rgba(102, 126, 234, 0.2);
+        }
+
+        .highlight-box strong {
+            font-weight: 700;
+        }
+
+        /* Research Interests Highlight */
+        #research-interests {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+            border-left: 5px solid #667eea;
+        }
+
+        #research-interests p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        /* Colored Tags for Skills/Research Areas */
+        .tag {
+            display: inline-block;
+            background-color: #667eea;
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin: 5px 8px 5px 0;
+            font-weight: 500;
+        }
+
+        .tag-alt {
+            background-color: #764ba2;
+        }
+
+        /* Item Highlight Cards */
+        .item {
+            background-color: #f8f9fa;
+            padding: 18px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            margin-bottom: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .item:hover {
+            box-shadow: 0 6px 12px rgba(102, 126, 234, 0.15);
+            transform: translateY(-2px);
+        }
+
+        /* Publication Cards */
+        .publication {
+            margin-bottom: 20px;
+            padding: 18px;
+            background-color: #f8f9fa;
+            border-left: 4px solid #764ba2;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .publication:hover {
+            box-shadow: 0 6px 12px rgba(118, 75, 162, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .publication p {
+            margin: 0;
+        }
+
+        /* Section Badges */
+        .section-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        /* WeChat Contact */
+        .wechat-contact {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-main);
+        }
+
+        .wechat-icon {
+            color: #09b83e;
+            font-weight: 600;
+        }
+
+        /* Collaboration Invitation Box */
+        .collaboration-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 35px 30px;
+            border-radius: 0;
+            margin: 0;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            text-align: center;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .collaboration-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .collaboration-box:hover::before {
+            left: 100%;
+        }
+
+        .collaboration-box h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: white;
+            font-weight: 700;
+        }
+
+        .collaboration-box p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin: 15px 0;
+            font-weight: 400;
+        }
+
+        .collaboration-box .contact-links {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .collaboration-box .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: white;
+            font-weight: 600;
+            background-color: rgba(255,255,255,0.2);
+            padding: 10px 18px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .collaboration-box .contact-link:hover {
+            background-color: rgba(255,255,255,0.35);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .collaboration-box .contact-link i {
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            .item-header {
+                flex-direction: column;
+            }
+            header h1 {
+                font-size: 2.2rem;
+            }
+            section {
+                padding: 25px 20px;
+            }
+            .profile-section {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+            .profile-photo img {
+                width: 150px;
+                height: 150px;
+            }
+            .tag {
+                margin-right: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="profile-section">
+                <div class="profile-photo">
+                    <!-- 替换为你自己的照片路径 -->
+                    <img src="/Users/liiuhaoran/Desktop/zhg.jpg" alt="Zhihao Guo">
+                </div>
+                <div class="profile-info">
+                    <h1>Zhihao Guo</h1>
+                    <div class="subtitle">PhD Researcher in Artificial Intelligence at Manchester Metropolitan University</div>
+                    <div class="contact-info">
+                        <a href="mailto:a916940283@gmail.com"><i class="fas fa-envelope"></i> a916940283@gmail.com</a>
+                        <a href="https://scholar.google.com/citations?user=yuF7P54AAAAJ&hl=en" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+                        <a href="https://www.linkedin.com/in/zhihao-guo-468227298/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                        <a href="https://github.com/zhihaohaoran" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        
+                        <span><i class="fas fa-map-marker-alt"></i> Manchester, UK</span>
+                    </div>
+                    <div class="favorite-poem">
+                        "天若有情天亦老，人间正道是沧桑"
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="collaboration-box">
+        <div class="container" style="padding: 0;">
+            <h3>🤝 Let's Collaborate!</h3>
+            <p>I am very happy to discuss research about <strong>3DGS for World Models</strong> and explore exciting opportunities together.</p>
+            <p style="font-size: 0.95rem; opacity: 0.95;">Feel free to contact me for collaboration!</p>
+            <div class="contact-links">
+          
+                <span class="contact-link" style="background-color: rgba(255,255,255,0.15); cursor: default;">
+                    <i class="fab fa-weixin"></i> WeChat: a916940283
+                </span>
+             
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        
+
+        <section id="education">
+            <span class="section-badge">🎓 Education</span>
+            <h2>Education</h2>
+            
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">Manchester Metropolitan University</span>
+                    <span class="item-date">Oct 2023 – Present</span>
+                </div>
+                <div class="item-subtitle">PhD in Artificial Intelligence | Manchester, UK</div>
+                <ul>
+                    <li>Research areas: 3D reconstruction, Neural radiance fields, 3D Gaussian splatting</li>
+                </ul>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">Xi'an University of Posts and Telecommunications</span>
+                    <span class="item-date">Sep 2018 – Jun 2021</span>
+                </div>
+                <div class="item-subtitle">Master of Engineering in Control Engineering | Xi'an, China</div>
+                <ul>
+                    <li>GPA: 3.26/4.0</li>
+                    <li>Focus: Computer vision, Object Detection</li>
+                </ul>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">Xi'an University of Posts and Telecommunications</span>
+                    <span class="item-date">Sep 2014 – Jun 2018</span>
+                </div>
+                <div class="item-subtitle">Bachelor of Engineering in Intelligent Science and Technology | Xi'an, China</div>
+                <ul>
+                    <li>GPA: 3.01/4.0</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="experience">
+            <span class="section-badge">💼 Professional Experience</span>
+            <h2>Professional Experience</h2>
+            
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">ShunWang Technology</span>
+                    <span class="item-date">Jun 2021 – Apr 2023</span>
+                </div>
+                <div class="item-subtitle">Computer Vision Algorithm Engineer | Hangzhou, China</div>
+                <ul>
+                    <li>Developed real-time human motion capture algorithms for monocular image input with Unity integration.</li>
+                    <li>Implemented inverse kinematics-based digital human driving system supporting half-body and whole-body capture.</li>
+                    <li>Developed facial expression animation algorithms using keypoint detection and blendshapes.</li>
+                </ul>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">SUMNet (Intern)</span>
+                    <span class="item-date">Nov 2019 – Mar 2021</span>
+                </div>
+                <div class="item-subtitle">Computer Vision Algorithm Engineer | Xi'an, China</div>
+                <ul>
+                    <li>Designed and implemented computer vision algorithms for real-world applications.</li>
+                    <li>Developed face mask recognition algorithm during COVID-19 pandemic.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="publications">
+            <span class="section-badge">📚 Publications</span>
+            <h2>Selected Publications</h2>
+            
+            <div class="publication">
+                <p><strong>Guo, Z.</strong>, et al. "UGOD: Uncertainty-Guided Differentiable Opacity and Soft Dropout for Enhanced Sparse-View 3DGS." <em>arXiv preprint arXiv:2508.04968</em> (2025).</p>
+            </div>
+
+            <div class="publication">
+                <p><strong>Guo, Z.</strong>, Su, J., Wang, S., Fan, J., Zhang, J., Han, L., and Wang, P. "GP-GS: Gaussian Processes for Enhanced Gaussian Splatting." <em>arXiv preprint arXiv:2502.02283</em> (2025).</p>
+            </div>
+
+            <div class="publication">
+                <p><strong>Guo, Z.</strong>, and Wang, P. "Depth Priors in Removal Neural Radiance Fields." <strong>Accepted to Annual Conference Towards Autonomous Robotic Systems (TAROS)</strong>, pp. 367-382. Springer, 2024.</p>
+            </div>
+
+            <div class="publication">
+                <p>Wang, P., <strong>Guo, Z.</strong>, et al. "A Spatial Relationship Aware Dataset for Robotics." <strong>Accepted to ACM MM 2025.</strong></p>
+            </div>
+
+            <div class="publication">
+                <p>Chen, Z., <strong>Guo, Z.</strong>, et al. "Dense-Jump Flow Matching with Non-Uniform Time Scheduling for Robotic Policies." <em>arXiv preprint arXiv:2509.13574</em> (2025). <strong>Accepted to ICRA 2026.</strong></p>
+            </div>
+
+            <div class="publication">
+                <p>Wang, P., <strong>Guo, Z.</strong>, Sait, A. L., and Pham, M. H. "Robot Shape and Location Retention in Video Generation Using Diffusion Models." <em><strong>IEEE/RSJ IROS</strong></em>, pp. 7375-7382, 2024.</p>
+            </div>
+
+            <div class="publication">
+                <p>Wang, P., Robbiani, M., and <strong>Guo, Z.</strong> "LLM Granularity for On-the-Fly Robot Control." <em><strong>Learning for Assistive Robotics Workshop, RSS</strong></em>, 2024.</p>
+            </div>
+        </section>
+
+        <section id="service-teaching">
+            <span class="section-badge">🎯 Service & Teaching</span>
+            <h2>Academic Service & Teaching</h2>
+            
+            <div class="item">
+                <span class="item-title">Academic Service</span>
+                <ul>
+                    <li><strong>Conference Reviewer:</strong> IROS 2025, AAAI 2026, ICRA 2026, ICME 2026, IEEE Access.</li>
+                    <li><strong>Student Organiser:</strong> IROS 2025 Workshop on Robotic Data Generation and Evaluation (RoDGE).</li>
+                </ul>
+            </div>
+
+            <div class="item">
+                <span class="item-title">Teaching Experience</span>
+                <ul>
+                    <li><strong>Teaching Assistant,</strong> Artificial Intelligence Principles (6G7V0011), Manchester Metropolitan University (Academic Years 2024/25 & 2025/26).</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="favorite-singer-box">
+            <div class="singer-photo">
+                <!-- 请将这个URL替换为徐佳莹的实际照片链接 -->
+                <img src="/Users/liiuhaoran/Desktop/xjy.jpg" alt="徐佳莹">
+            </div>
+            <div class="singer-content">
+                <h3>My Favorite Singer</h3>
+                <div class="singer-name">徐佳瑩</div>
+                <div class="singer-info">
+                    <p>A talented singer-songwriter whose music brings me inspiration and joy.</p>
+                    <p style="margin-top: 8px;">Her melodies and lyrics resonate deeply with my soul.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Zhihao Guo. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
